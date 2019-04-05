@@ -26,11 +26,31 @@ Runs all the tests
 fastlane android beta
 ```
 Submit a new Beta Build to Crashlytics Beta
+### android instrumentation_tests
+```
+fastlane android instrumentation_tests
+```
+Run instrumentation tests
+### android flavor1
+```
+fastlane android flavor1
+```
+Deploy each flavor
+### android upload
+```
+fastlane android upload
+```
+upload to playstore
 ### android deploy
 ```
 fastlane android deploy
 ```
 Deploy a new version to the Google Play
+### android instrumentacion_test_testlab
+```
+fastlane android instrumentacion_test_testlab
+```
+Run instrumentation tests in FireBase Test Lab
 
 ----
 

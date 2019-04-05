@@ -15,6 +15,7 @@
 
 default_platform(:android)
 
+
 platform :android do
   desc "Runs all the tests"
   lane :test do
@@ -25,14 +26,55 @@ platform :android do
   lane :beta do
     gradle(task: "clean assembleRelease")
     crashlytics
+    #get_certificates
+    #get_provisioning_profile
+    #build_app
   
     # sh "your_script.sh"
     # You can also use other beta testing services here
+  end
+
+ desc "Run instrumentation tests"
+  lane :instrumentation_tests do
+   automated_test_emulator_run(
+    AVD_setup_path: "fastlane/AVD_setup.json",
+    AVD_recreate_new: false,
+    AVD_clean_after: false,
+    gradle_task: "connectedDebugAndroidTest")
+ end
+
+ desc "Deploy each flavor"
+  lane :flavor1 do
+	gradle(task: "clean")
+	gradle(task: "assembleRelease")
+	supply(
+	track: 'alpha',
+	package_name: 'com.sqli.fastlane.ng',
+	apk: "/home/dtoro/Documentos/FastLane/fastlane_poc/fastlane-poc/app/build/outputs/apk/release/app-release.apk")
+   
+  end
+
+  desc "upload to playstore"
+    lane :upload do
+    flavor1
   end
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
     gradle(task: "clean assembleRelease")
     upload_to_play_store
+  end
+
+  desc "Run instrumentation tests in FireBase Test Lab"
+  lane :instrumentacion_test_testlab do
+	run_tests_firebase_testlab(
+	 project_id: "com.sqli.fastlane.ng",
+	 devices: [
+		{
+		  model: "Nexus6P",
+		  version: "27"
+		}
+	],
+	delete_firebase_files: true)
   end
 end
