@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { docker {image 'reginfell/fastlane'}}
 
     stages {
         stage('Build') {

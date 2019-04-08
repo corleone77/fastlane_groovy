@@ -13,3 +13,4 @@
 .externalNativeBuild
 c.json
 Gemfile.lock
+credentials.json

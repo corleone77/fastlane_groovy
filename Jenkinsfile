@@ -1,4 +1,4 @@
-@Library('jenkins-global-libs@master') _
+@Library('nesbase@nesbase-1.0.0') _
 
 
     Artifacts = [[
