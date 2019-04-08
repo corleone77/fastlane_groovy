@@ -7,12 +7,11 @@ pipeline {
                 sh 'fastlane deploy' 
             }
         }
-    }
-     stages {
-        stage('Demo') {
+    
+       stage('Demo') {
            steps {
               sh 'fastlane instrumentation_tests'
-                }
+              }
          }
-        }	
+     }	
 }
