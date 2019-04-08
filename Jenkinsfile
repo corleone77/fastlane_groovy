@@ -31,13 +31,12 @@ androidBuild {
     MavenProperties << [path: 'app/gradle.properties']
 
     Artifacts = [[
-                    file: 'app/build/outputs/apk/${flavorName?.concat("/")?:""}${buildType}/*.apk',
-                    type: 'apk'],
-                [
-                    file: 'app/build/outputs/mapping/${flavorName?.concat("/")?:""}${buildType}/mapping.txt',
-                    type: 'mapping']
+                    file: 'app/build/outputs/apk/release/*.apk',
+                    type: 'apk']
+    //            [
+    //                file: 'app/build/outputs/mapping/${flavorName?.concat("/")?:""}${buildType}/mapping.txt',
+   //                 type: 'mapping']
     ]
 
     previewRepo = "fastlane_groovy"
-    previewServer = "nestor"
 }
