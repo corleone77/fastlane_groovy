@@ -1,4 +1,4 @@
-@Library('nesbase@nesbase-1.0.0') _
+@Library('nesbase@master') _
 
 
     Artifacts = [[
