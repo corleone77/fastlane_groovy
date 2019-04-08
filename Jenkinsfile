@@ -4,7 +4,7 @@ androidBuild {
     //sonar['sonar.projectName'] = 'Android Shop Fastlane'
 
     // Uncomment and update the value when a release from a branch other than develop is required
-    // ReleaseBranch = 'release/january'
+     ReleaseBranch = 'master'
 
     BuildTypes = [
         debug  : [name: 'debug', flavorNames: ['store', 'stg']],
@@ -40,3 +40,4 @@ androidBuild {
 
     previewRepo = "fastlane_groovy"
     previewServer = "nestor"
+}
