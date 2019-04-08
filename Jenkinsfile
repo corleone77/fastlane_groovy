@@ -8,4 +8,11 @@ pipeline {
             }
         }
     }
+     stages {
+        stage('Demo') {
+           steps {
+              sh 'fastlane instrumentation_tests'
+                }
+         }
+        }	
 }
