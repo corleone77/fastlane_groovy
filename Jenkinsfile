@@ -8,9 +8,9 @@ pipeline {
             }
         }
     
-       stage('Demo') {
+       stage('test') {
            steps {
-              sh 'fastlane instrumentation_tests'
+              sh 'fastlane test'
               }
          }
      }	
