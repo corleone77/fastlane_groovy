@@ -1,4 +1,4 @@
-@Library('jenkins-globa-libs@master') _
+@Library('jenkins-global-libs@master') _
 
 
     Artifacts = [[
