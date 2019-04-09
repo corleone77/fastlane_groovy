@@ -1,5 +1,8 @@
 pipeline {
-    agent { docker {image 'corleone77/fastlane:v1'}}
+    agent { 
+	docker {
+		image 'corleone77/fastlane:v1'
+		args '-v $PWD:/app'}}
 
     stages {
         stage('Build') {
