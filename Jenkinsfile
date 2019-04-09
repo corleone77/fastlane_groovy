@@ -2,7 +2,7 @@ pipeline {
     agent { 
 	docker {
 		image 'corleone77/fastlane:v1'
-		args ' -u root -v $PWD:/app'}}
+		args ' -u root -v $RUTA:/app'}}
 
     stages {
         stage('Build') {
