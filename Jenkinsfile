@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker {image 'reginfell/fastlane'}}
+    agent { docker {image 'corleone77/fastlane'}}
 
     stages {
         stage('Build') {
