@@ -1,7 +1,7 @@
 pipeline {
     agent { 
 	docker {
-		image 'corleone77/fastlane:v1'
+		image 'docker.nespresso.com/fastlane:v1.0'
 		args ' -u root -v $RUTA:/app'}}
 
     stages {
